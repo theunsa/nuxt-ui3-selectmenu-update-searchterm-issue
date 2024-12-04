@@ -1,75 +1,21 @@
-# Nuxt UI v3 Starter
+# To run
 
-Look at [Nuxt docs](https://nuxt.com/docs/getting-started/introduction) and [Nuxt UI docs](https://ui3.nuxt.dev) to learn more.
-
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+```
+pnpm install && pnpm dev
 ```
 
-## Development Server
+# Issue
 
-Start the development server on `http://localhost:3000`:
+`@update:search-term` triggered when not expecting it to.
 
-```bash
-# npm
-npm run dev
+## To reproduce
 
-# pnpm
-pnpm run dev
+### Method 1
 
-# yarn
-yarn dev
+- Just click on the SelectMenu without selecting anything (i.e. open and close it)
+- You will notice it triggers the `@update:search-term` event even though no search term changes were made
 
-# bun
-bun run dev
-```
+### Method 2
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- Select an item in the SelectMenu
+- You will notice it triggers the `@update:search-term` event twice even though no search term changes were made
